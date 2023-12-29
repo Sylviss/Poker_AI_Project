@@ -13,13 +13,13 @@ Used package:
 - pygame
 
 ## Installation guide:
-- Clone the repo to your own machine:
+Clone the repo to your own machine:
 ```bash
 git clone https://github.com/Sylviss/Poker_AI_Project
 ```
 
 ## Run the game:
-- Firstly, you should change some constant in poker_ai/constant.py. These are the default settings, which should be enough for you to test with the AI:
+Firstly, you should change some constant in poker_ai/constant.py. These are the default settings, which should be enough for you to test with the AI:
 ```python
 PLAYER = 2
 # The number of players
@@ -49,11 +49,11 @@ MODEL=7
 # 7: mcts ai agent with opponent modeling
 # Note that opponent modeling is implemented with multiprocess, so don't use opponent modeling if you encounter some problems with multiprocessing.
 ```
-- Running main.py will run the game in terminal with all of the above settings:
+Running main.py will run the game in terminal with all of the above settings:
 ```bash
 python main.py
 ```
-- If you want to play the game in a fancy pygame implement, run fancy_rable.py:
+If you want to play the game in a fancy pygame implement, run fancy_rable.py:
 ```bash
 python fancy_table.py
 ```
@@ -63,9 +63,9 @@ impossible for players to play in 1 machine and AI games are faster on terminal.
   - The game logs and many useful informations are printed out in the terminal.
 
 ## Training your own opponent modeling model:
-- Firstly, you should make a backup file of poker_ai/ai/ml/default_data.json, as it is our model's default data.
-- To start off, delete/rename the default_data.json.
-- Run training.py:
+Firstly, you should make a backup file of poker_ai/ai/ml/default_data.json, as it is our model's default data.
+To start off, delete/rename the default_data.json.
+Run training.py:
 ```bash
 python training.py #mode
 ```
@@ -77,7 +77,7 @@ All of the modes for traning:
 Note that the opponent modeling is only useful with enough training time, with the minimum should be 2-3 hours. If you don't have much time, please use our pre-trained model.
 
 ## Tesing the AI against each others:
-- Edit tester.py:
+Edit tester.py:
 ```python
 if __name__=="__main__":
     game_loop_model_test(num_players,init_money,games,models_list)
@@ -87,11 +87,11 @@ Changes the parameters in game_loop_model_test:
   + init_money: the amount of starting money
   + games: the number of games to test
   + models_list: the models that you want to use in the test. The first element will be Player 1's model, second will be Player 2's model and so on.
-- Run training.py:
+Afer that, run tester.py:
 ```bash
 python tester.py
 ```
-- After testing, the file will print out the number of games win by every models.
+After testing, the file will print out the number of games win by every models.
 
 ## Note:
   - The multiprocessing has a strange interaction with KeyboardInterrupt. As such, if not necessary, don't try to cancel any running programs with multiprocessing running. The best bet to cancel any programs is when it's your turn to act in a player vs AI mode.
