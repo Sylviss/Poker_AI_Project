@@ -96,3 +96,4 @@ After testing, the file will print out the number of games win by every models.
 ## Note:
   - The multiprocessing has a strange interaction with KeyboardInterrupt. As such, if not necessary, don't try to cancel any running programs with multiprocessing running. The best bet to cancel any programs is when it's your turn to act in a player vs AI mode.
   - All of the materials and references we used in this project is inside books & materials folders.
+  - If there's any major problems with the project, please contact with me through Teams. I will fix the problems as soon as possible.
