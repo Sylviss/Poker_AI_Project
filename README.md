@@ -53,7 +53,7 @@ Running main.py will run the game in terminal with all of the above settings:
 ```bash
 python main.py
 ```
-If you want to play the game in a fancy pygame implement, run fancy_rable.py:
+If you want to play the game in a fancy pygame implement, run fancy_table.py:
 ```bash
 python fancy_table.py
 ```
