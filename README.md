@@ -15,11 +15,11 @@ Used package:
 ## Installation guide:
 - Clone the repo to your own machine:
 ```bash
-git clone 
+git clone https://github.com/Sylviss/Poker_AI_Project
 ```
 
 ## Run the game:
-- Firstly, you should change some constant in poker_ai/constant.py:
+- Firstly, you should change some constant in poker_ai/constant.py. These are the default settings, which should be enough for you to test with the AI:
 ```python
 PLAYER = 2
 # The number of players
@@ -60,7 +60,7 @@ python fancy_table.py
 Note that:
   - The pygame implement only support games of player vs AIs. It currently do not support player vs players and AI vs AIs, since it's
 impossible for players to play in 1 machine and AI games are faster on terminal.
-  - The game logs and many useful informations is printed out in the terminal.
+  - The game logs and many useful informations are printed out in the terminal.
 
 ## Training your own opponent modeling model:
 - Firstly, you should make a backup file of poker_ai/ai/ml/default_data.json, as it is our model's default data.
@@ -82,7 +82,7 @@ Note that the opponent modeling is only useful with enough training time, with t
 if __name__=="__main__":
     game_loop_model_test(num_players,init_money,games,models_list)
 ```
-Changes the parameters:
+Changes the parameters in game_loop_model_test:
   - num_players: number of player in testing
   - init_money: the amount of starting money
   - games: the number of games to test
@@ -91,7 +91,7 @@ Changes the parameters:
 ```bash
 python tester.py
 ```
-- After testing, the file will print out the number of games win by every players.
+- After testing, the file will print out the number of games win by every models.
 
 ## Note:
   - The multiprocessing has a strange interaction with KeyboardInterrupt. As such, if not necessary, don't try to cancel any running programs with multiprocessing running. The best bet to cancel any programs is when it's your turn to act in a player vs AI mode.
