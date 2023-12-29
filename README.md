@@ -70,10 +70,10 @@ impossible for players to play in 1 machine and AI games are faster on terminal.
 python training.py #mode
 ```
 All of the modes for traning:
-  - 1: Best suited for model againts 2 players.
-  - 2: Best suited for model againts 3-4 players.
-  - 3: Best suited for model againts 5-6 players.
-  - 4: Best suited for model againts 2-6 players.
+  + 1: Best suited for model againts 2 players.
+  + 2: Best suited for model againts 3-4 players.
+  + 3: Best suited for model againts 5-6 players.
+  + 4: Best suited for model againts 2-6 players.
 Note that the opponent modeling is only useful with enough training time, with the minimum should be 2-3 hours. If you don't have much time, please use our pre-trained model.
 
 ## Tesing the AI against each others:
@@ -83,10 +83,10 @@ if __name__=="__main__":
     game_loop_model_test(num_players,init_money,games,models_list)
 ```
 Changes the parameters in game_loop_model_test:
-  - num_players: number of player in testing
-  - init_money: the amount of starting money
-  - games: the number of games to test
-  - models_list: the models that you want to use in the test. The first element will be Player 1's model, second will be Player 2's model and so on.
+  + num_players: number of player in testing
+  + init_money: the amount of starting money
+  + games: the number of games to test
+  + models_list: the models that you want to use in the test. The first element will be Player 1's model, second will be Player 2's model and so on.
 - Run training.py:
 ```bash
 python tester.py
