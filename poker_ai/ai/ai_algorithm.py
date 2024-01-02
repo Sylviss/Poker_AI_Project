@@ -17,7 +17,7 @@ def all_in_ai_agent(actions):
     return [1]
 
 def super_random_ai_agent(player, actions, cur_call, cur_raise):
-    """This mf randoms everything.
+    """This agent randoms everything.
 
     Args:
         player (poker_ai.poker.poker_component.Player()): the Player object of the AI , which contains the hand cards.
@@ -499,16 +499,6 @@ def mcts_ai_agent(index, players, min_money, board, actions, cur_call, cur_raise
             reward=simulation(index, preflop_big_blind_value, selected_node)
             backpropagation(selected_node,reward,player,total_money,players)
     action_list=choose_action(cur_node)
-    # a=[cur_node]
-    # print(cur_node.player_name,cur_node.next_player_name,cur_node.visits,cur_node.turn,cur_node.action_turn)
-    # while(len(a)!=0):
-    #     hehe=a.pop(0)
-    #     for key in hehe.children:
-    #         hehehe=hehe.children[key]
-    #         print(key,hehehe.player_name,hehehe.next_player_name,hehehe.visits,hehehe.values,hehehe.turn,hehehe.action_turn)
-    #         a.append(hehehe)
-    # print(action_list)
-    # print()
     action=max(action_list,key=lambda a: a[1])[0]
     # Rule-based starts here
     match action:
@@ -719,8 +709,6 @@ def simulation(index, preflop_big_blind_value, node):
     name,self_reward=simulation_self(index, preflop_big_blind_value, node)
     reward_dict=simulation_other(index, preflop_big_blind_value, node)
     reward_dict[name]=self_reward
-    # print(reward_dict)
-    # print()
     return reward_dict
 
 def simulation_self(index, preflop_big_blind_value, node):
@@ -786,8 +774,6 @@ def simulation_game_other(player_1,simulation_list,board,bb_val,players):
     for player in players_check:
         checker[player.name]=player.hand.create_poker(board.hand).check()
     win = max(list(checker.values()))
-    # print(checker)
-    # print()
     return_dict={}
     winner=[]
     for player in players:

@@ -615,6 +615,8 @@ def game_loop_model_test(num_players, init_money, n, model_list):
     print(win_dict)
 
 def game_loop(num_players, init_money):
+    """The main loop for playing the game.
+    """
     play_flag = True
     players, engine = game_init(num_players, init_money)
     tables = engine.tables
